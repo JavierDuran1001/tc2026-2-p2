@@ -3,10 +3,13 @@ const express = require("express")
 const sequelize = require('./utils/database')
 const vjRoutes = require('./routes/videojuegos')
 const csRoutes = require('./routes/consola')
+const csvjRoutes = require('./routes/consolaVideojuego')
+
+const app = express();
 
 app.use('/videojuegos',vjRoutes);
 app.use('/consola',csRoutes);
-const app = express();
+app.use('/consolaVideojuego',csvjRoutes);
 
 /*app.get("/prueba",(req,res)=>{
     res.send("Prueba de servidor funcionando")
